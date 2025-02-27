@@ -17,4 +17,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     // Check if an email exists (ensures unique email)
     boolean existsByProfileEmail(String email);
+
+    Optional<User> findByCredentialsUsernameAndActiveTrue(String username);
 }
